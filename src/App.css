@@ -1,8 +1,11 @@
-.bg-myRed {
-  background-color: crimson;
+.bg-myBlack {
+  background-color: black;
 }
 
-.content {
-  padding: 12 px;
-  height: 1000px;
+.linkedin {
+  margin-right: 5px;
+}
+
+.github {
+  margin-left: 5px;
 }

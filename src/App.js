@@ -1,34 +1,52 @@
-import logo from "./logo.svg";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { Nav, Navbar } from "react-bootstrap";
 
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import About from "./pages/aboutme";
+import Contact from "./pages/contact";
+import Projects from "./pages/projects";
+import Resume from "./pages/resume";
+import Footer from "./components/footer";
+
 function App() {
   return (
-    <div className="App">
-      <Navbar
-        bg="myRed"
-        variant="dark"
-        sticky="top"
-        expand="sm"
-        collapseOnSelect
-      >
-        <Navbar.Brand>
-          <img src={logo} alt="Avatar" width="40px" height="40px" />
-          Avatar
-        </Navbar.Brand>
-        <Navbar.Toggle />
-        <Navbar.Collapse>
-          <Nav>
-            <Nav.Link href="about-me">About Me</Nav.Link>
-            <Nav.Link href="projects">Projects</Nav.Link>
-            <Nav.Link href="contact">Contact</Nav.Link>
-            <Nav.Link href="Resume">Resume</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-      <div className="content">This is content</div>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar
+          bg="myBlack"
+          variant="dark"
+          sticky="top"
+          expand="sm"
+          collapseOnSelect
+        >
+          <Navbar.Toggle />
+          <Navbar.Collapse>
+            <Nav>
+              <Nav.Link as={Link} to="/">
+                About Me
+              </Nav.Link>
+              <Nav.Link as={Link} to="/Projects">
+                Projects
+              </Nav.Link>
+              <Nav.Link as={Link} to="/Contact">
+                Contact
+              </Nav.Link>
+              <Nav.Link as={Link} to="/Resume">
+                Resume
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+        <Switch>
+          <Route path="/" component={About} exact />
+          <Route path="/projects" component={Projects} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/resume" component={Resume} />
+        </Switch>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 
