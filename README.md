@@ -1,7 +1,7 @@
 # React_Portfolio
 
-![]()
-)
+![HomePage](ReactPortfolio.png)
+
 
 ## Live Sit
 [Live Site](https://cadenwit.github.io/React_Portfolio/)
